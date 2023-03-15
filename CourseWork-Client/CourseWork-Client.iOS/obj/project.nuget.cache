@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bV/6PcidqbibSCiE7Ca1K8+fom8D/m3QaN4TWB0rKs/uphbYcf/SZmQVYD2tveI2Kpb5fOCl9r4n9mARN/Y6Ag==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client.iOS\\CourseWork-Client.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Shnaps\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Shnaps\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Shnaps\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

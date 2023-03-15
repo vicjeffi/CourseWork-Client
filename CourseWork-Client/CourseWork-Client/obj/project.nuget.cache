@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "4tJA6SyJvFX2o9Z9T7DqSkFvgOH7fuX+F5ArGKN87UauOYPLagNV7xUY6WFs89Nr7cc9SKgzPOBng5scWF7TfQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Shnaps\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Shnaps\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Shnaps\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Shnaps\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Shnaps\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
