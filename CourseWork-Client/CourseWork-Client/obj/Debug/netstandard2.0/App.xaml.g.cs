@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CourseWork-Client.App.xaml", "App.xaml", typeof(global::CourseWork_Client.App))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("ConsoleAppForStudentsApp.App.xaml", "App.xaml", typeof(global::CourseWork_Client.App))]
 
 namespace CourseWork_Client {
     

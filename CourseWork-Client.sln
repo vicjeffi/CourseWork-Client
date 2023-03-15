@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWork-Client.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWork-Client.iOS", "CourseWork-Client\CourseWork-Client.iOS\CourseWork-Client.iOS.csproj", "{B477B83D-1589-4821-8B1B-9D5B5BA09087}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWork-Client", "CourseWork-Client\CourseWork-Client\CourseWork-Client.csproj", "{BB259A06-1E7B-463C-9429-68D4F901773C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppForStudentsApp", "CourseWork-Client\CourseWork-Client\ConsoleAppForStudentsApp.csproj", "{BB259A06-1E7B-463C-9429-68D4F901773C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

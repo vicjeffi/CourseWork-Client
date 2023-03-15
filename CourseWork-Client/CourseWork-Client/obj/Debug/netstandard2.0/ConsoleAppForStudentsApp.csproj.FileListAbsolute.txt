@@ -1,0 +1,15 @@
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.csproj.AssemblyReference.cache
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.AssemblyInfoInputs.cache
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.AssemblyInfo.cs
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.csproj.CoreCompileInputs.cache
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\bin\Debug\netstandard2.0\ConsoleAppForStudentsApp.deps.json
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\bin\Debug\netstandard2.0\ConsoleAppForStudentsApp.dll
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\bin\Debug\netstandard2.0\ConsoleAppForStudentsApp.pdb
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.dll
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\refint\ConsoleAppForStudentsApp.dll
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.pdb
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ref\ConsoleAppForStudentsApp.dll

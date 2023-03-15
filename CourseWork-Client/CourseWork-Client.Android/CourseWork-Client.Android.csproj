@@ -87,9 +87,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CourseWork-Client\CourseWork-Client.csproj">
-      <Project>{9019530E-7972-4C66-9122-292737951F0B}</Project>
-      <Name>CourseWork-Client</Name>
+    <ProjectReference Include="..\CourseWork-Client\ConsoleAppForStudentsApp.csproj">
+      <Project>{BB259A06-1E7B-463C-9429-68D4F901773C}</Project>
+      <Name>ConsoleAppForStudentsApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

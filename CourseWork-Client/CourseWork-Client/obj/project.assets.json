@@ -547,9 +547,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client.csproj",
-      "projectName": "CourseWork-Client",
-      "projectPath": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client.csproj",
+      "projectUniqueName": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client\\ConsoleAppForStudentsApp.csproj",
+      "projectName": "ConsoleAppForStudentsApp",
+      "projectPath": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client\\ConsoleAppForStudentsApp.csproj",
       "packagesPath": "C:\\Users\\Shnaps\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Shnaps\\source\\repos\\CourseWork-Client\\CourseWork-Client\\CourseWork-Client\\obj\\",
       "projectStyle": "PackageReference",
