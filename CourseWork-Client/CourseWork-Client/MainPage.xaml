@@ -1,18 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Title="Login" x:Class="CourseWork_Client.MainPage">
-
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             Title="Login" 
+             x:Class="CourseWork_Client.MainPage">
+    <ContentPage.Resources >
+        <ResourceDictionary x:Key="PageBackgroundColor">
+            <? брух
+        </ResourceDictionary>    
+    </ContentPage.Resources>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" Padding="30" Spacing="40">
-            <Label Text="Username" />
-            <Entry Placeholder="Логин" Keyboard="Email" TextColor="White"/>
-            <Label Text="Password" />
-            <Entry  IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="Password_Entry"/>
-            <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="White"  
+        <StackLayout Padding="30" Spacing="40" BackgroundColor="Green">
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <Label HorizontalOptions="Center" FontSize="40">
+                    Приветствуем!
+                </Label>
+                <Label HorizontalOptions="Center" FontSize="20">
+                    Ввойдите в аккаунт
+                </Label>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
+                <Frame HasShadow="True">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Color="ForestGreen" Offset="0.1" />
+                            <GradientStop Color="#0A850A" Offset="1" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+
+                    <StackLayout>
+                        <Label Text="Username" />
+                        <Entry Placeholder="Логин" Keyboard="Email" TextColor="White"/>
+                        <Label Text="Password" />
+                        <Entry  IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="Password_Entry"/>
+                    </StackLayout>
+                </Frame>
+                
+                <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="#088da5"/>
+                    BackgroundColor="#21A508"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="End">
+                <Label HorizontalOptions="Center" FontSize="20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Нету учетной записи?" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NoAccountAction}" CommandParameter="{Binding Website}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

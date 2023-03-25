@@ -4,18 +4,28 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace CourseWork_Client
 {
+    
     public partial class MainPage : ContentPage
     {
-        Action FailueToLogin;
+        public readonly string website = @"http://VicJeffi.pythonanywhere.com";
+        public string Website
+        {
+            get
+            {
+                return website;
+            }
+        }
+        public ICommand NoAccountAction => new Command<string>(async(url) => await Launcher.OpenAsync(url));
         public MainPage()
         {
             InitializeComponent();
-            FailueToLogin += () => DisplayAlert("Error", Password_Entry.Text, "OK");
         }
 
         protected override void OnAppearing()
@@ -29,7 +39,7 @@ namespace CourseWork_Client
         }
         private void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            FailueToLogin();
+
         }
     }
 }
