@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             Title="Login" 
-             x:Class="CourseWork_Client.MainPage">
-    <ContentPage.Resources >
-        <ResourceDictionary x:Key="PageBackgroundColor">
-            <? брух
-        </ResourceDictionary>    
-    </ContentPage.Resources>
-    
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tool="http://xamarin.com/schemas/2020/toolkit"
+             Title="Вход в профиль" 
+             x:Class="CourseWork_Client.MainPage"
+             NavigationPage.HasBackButton="False">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
+        <ToolbarItem Text="Регистрация" Clicked="OnSingUpButtonClicked"/>
     </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="40" BackgroundColor="Green">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                <Label HorizontalOptions="Center" FontSize="40">
-                    Приветствуем!
-                </Label>
-                <Label HorizontalOptions="Center" FontSize="20">
-                    Ввойдите в аккаунт
-                </Label>
+
             </StackLayout>
 
             <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
+
+                <Label HorizontalOptions="Center" FontSize="40">
+                    Приветствуем!
+                </Label>
+                <Label HorizontalOptions="Center" FontSize="20" Padding="0,0,0,20">
+                    Ввойдите в аккаунт
+                </Label>
+
                 <Frame HasShadow="True">
                     <Frame.Background>
                         <LinearGradientBrush EndPoint="1,0">
@@ -33,13 +33,28 @@
                     </Frame.Background>
 
                     <StackLayout>
-                        <Label Text="Username" />
-                        <Entry Placeholder="Логин" Keyboard="Email" TextColor="White"/>
-                        <Label Text="Password" />
-                        <Entry  IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="Password_Entry"/>
+                        <Label Text="Пользователь" />
+                        <Entry x:Name="username_Entry" Placeholder="Логин или почта" Keyboard="Email" TextColor="White">
+                            <Entry.Effects>
+                                <tool:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+
+                        <Label Text="Пороль" />
+                        <Entry IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="password_Entry">
+                            <Entry.Effects>
+                                <tool:RemoveBorderEffect/>
+                            </Entry.Effects>
+                        </Entry>
+                        <StackLayout Orientation="Horizontal" >
+                            <CheckBox x:Name="savelogin_checkBox"/>
+                            <Label Text="Запомнить меня?" VerticalTextAlignment="Center"/>
+                        </StackLayout>
                     </StackLayout>
                 </Frame>
-                
+
+                <Image Source="background_login" />
+
                 <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#21A508"/>
@@ -51,7 +66,7 @@
                         <FormattedString>
                             <Span Text="Нету учетной записи?" TextDecorations="Underline">
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding NoAccountAction}" CommandParameter="{Binding Website}"/>
+                                    <TapGestureRecognizer Command="{Binding OpenUrlAction}" CommandParameter="{Binding Site.Url}"/>
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>

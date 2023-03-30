@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tool="http://xamarin.com/schemas/2020/toolkit"
+             Title="Главная" 
+             x:Class="ConsoleAppForStudentsApp.TabbedPage1"
+             NavigationPage.HasBackButton="False">
+  <!--Pages can be added as references or inline-->
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Выход" Clicked="OnSingUpButtonClicked"/>
+    </TabbedPage.ToolbarItems>
+
+    <ContentPage Title="Лента новостей" >
+        <ContentPage.Content>
+            <Grid>
+                <Label>
+                    sffsf
+                </Label>
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Посещаемость" />
+    <ContentPage Title="Профиль" >
+        <ContentPage.Content>
+            <Grid>
+                <Label Text="{Binding Username}"/>
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>
