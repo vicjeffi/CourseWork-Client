@@ -1,31 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:tool="http://xamarin.com/schemas/2020/toolkit"
-             Title="Главная" 
+             xmlns:tool="http://xamarin.com/schemas/2020/toolkit" 
+            xmlns:consoleappforstudentsapp="clr-namespace:ConsoleAppForStudentsApp" x:DataType="consoleappforstudentsapp:TabbedPage1"
+            Title="Главная" 
              x:Class="ConsoleAppForStudentsApp.TabbedPage1"
              NavigationPage.HasBackButton="False">
   <!--Pages can be added as references or inline-->
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="Выход" Clicked="OnSingUpButtonClicked"/>
+        <ToolbarItem Text="Выход" Clicked="OnLogoutButtonClicked"/>
     </TabbedPage.ToolbarItems>
 
-    <ContentPage Title="Лента новостей" >
+    <ContentPage Title="Лента новостей">
         <ContentPage.Content>
-            <Grid>
+            <StackLayout Padding="10">
                 <Label>
                     sffsf
                 </Label>
-            </Grid>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Посещаемость" />
-    <ContentPage Title="Профиль" >
+    <ContentPage Title="Отсутствия">
         <ContentPage.Content>
-            <Grid>
-                <Label Text="{Binding Username}"/>
-            </Grid>
+            <StackLayout Padding="10">
+                <Label>
+                    sffsf
+                </Label>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Профиль">
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Здравствуйте, " FontSize="20"/>
+                    <Label Text="{Binding User.lastname}" FontSize="20"/>
+                    <Label Text="{Binding User.fathername}" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20">
+                    <Label Text="Ваши данные:" FontSize="20"/>
+                </StackLayout>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

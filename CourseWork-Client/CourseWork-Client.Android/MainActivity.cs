@@ -15,7 +15,7 @@ namespace CourseWork_Client.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            this.SetStatusBarColor(Color.ForestGreen);
+            this.SetStatusBarColor(new Color(34, 34, 34));
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
