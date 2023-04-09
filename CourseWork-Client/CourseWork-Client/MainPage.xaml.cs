@@ -16,6 +16,8 @@ using System.IO;
 using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
 using System.Net.NetworkInformation;
+using ConsoleAppForStudentsApp.Models;
+using System.Reflection;
 
 namespace CourseWork_Client
 {
@@ -31,6 +33,9 @@ namespace CourseWork_Client
         }
         private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
+            loading_indicator.IsRunning = true;
+            await Task.Delay(1);
+
             if (savelogin_checkBox.IsChecked)
             {
                 if(username_Entry.Text != "" || password_Entry.Text != "")
@@ -59,7 +64,7 @@ namespace CourseWork_Client
                     await Xamarin.Essentials.SecureStorage.SetAsync("password", password_Entry.Text);
                 }
 
-                await DisplayAlert("Залогинился!", message, "OK");
+                //await DisplayAlert("Залогинился!", message, "OK");
 
                 bool result;
                 TabbedPage1.status = Site.GetStatus(out result);
@@ -75,6 +80,7 @@ namespace CourseWork_Client
             }
             else
             {
+                loading_indicator.IsRunning = false;
                 await DisplayAlert("Ошибка!", message, "OK");
             }
         }
@@ -185,6 +191,27 @@ namespace CourseWork_Client
             return message;
         }
 
+        public string GetGroupInfo(string index, out bool result)
+        {
+            string message = string.Empty;
+
+            var task1 = client.GetAsync(url + $"api/get-group?group_index=" + index);
+            task1.Wait();
+            var http_result = task1.Result;
+
+            var task2 = http_result.Content.ReadAsStringAsync();
+            task2.Wait();
+
+            message += task2.Result;
+
+            if (http_result.StatusCode == HttpStatusCode.Created)
+                result = true;
+            else
+                result = false;
+
+            return message;
+        }
+
         public long ServerStatus(out bool result)
         {
             result = false;
@@ -198,6 +225,28 @@ namespace CourseWork_Client
                 return _result.RoundtripTime;
             }
             return 0;
+        }
+        public string PostAttendance(out bool result, string student_id, string discipline, DateTime time)
+        {
+            string _time = time.ToString("dd'-'MM'-'yyyy'-'HH'-'mm'-'ss");
+
+            string message = string.Empty;
+
+            var task1 = client.GetAsync(url + $"add-attendance?student-id={student_id}&discipline-id={discipline}&time={_time}");
+            task1.Wait();
+            var http_result = task1.Result;
+
+            var task2 = http_result.Content.ReadAsStringAsync();
+            task2.Wait();
+
+            message += task2.Result;
+
+            if (http_result.StatusCode == HttpStatusCode.Created)
+                result = true;
+            else
+                result = false;
+
+            return message;
         }
     }
 }

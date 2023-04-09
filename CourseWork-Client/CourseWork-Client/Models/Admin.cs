@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ConsoleAppForStudentsApp.Models
 {
-    internal class Admin: IUser
+    public class Admin: IUser
     {
         public string status { get; set; }
         public string id { get; set; }

@@ -10,56 +10,57 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Padding="30" Spacing="40" BackgroundColor="#2c2c2c">
-            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+        <AbsoluteLayout VerticalOptions="Fill">
+            <StackLayout x:Name="main_content" Padding="30" Spacing="40" BackgroundColor="#2c2c2c" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
-            </StackLayout>
-
-            <StackLayout VerticalOptions="CenterAndExpand" Spacing="10">
-                <Label HorizontalOptions="Center" FontSize="40" FontAttributes="Bold">
-                    Приветствуем!
-                </Label>
-                <Label HorizontalOptions="Center" FontSize="20" Padding="0,0,0,20">
-                    Ввойдите в аккаунт
-                </Label>
-
-                <Frame HasShadow="True">
-                    <Frame.Background>
-                        <LinearGradientBrush EndPoint="1,0">
-                            <GradientStop Color="#222222" Offset="0.1" />
-                            <GradientStop Color="#222222" Offset="1" />
-                        </LinearGradientBrush>
-                    </Frame.Background>
-
-                    <StackLayout>
-                        <Label Text="Пользователь" />
-                        <Entry x:Name="username_Entry" Placeholder="Логин или почта" Keyboard="Email" TextColor="White">
-                            <Entry.Effects>
-                                <tool:RemoveBorderEffect />
-                            </Entry.Effects>
-                        </Entry>
-
-                        <Label Text="Пороль" />
-                        <Entry IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="password_Entry">
-                            <Entry.Effects>
-                                <tool:RemoveBorderEffect/>
-                            </Entry.Effects>
-                        </Entry>
-                        <StackLayout Orientation="Horizontal" >
-                            <CheckBox x:Name="savelogin_checkBox"/>
-                            <Label Text="Запомнить меня?" VerticalTextAlignment="Center"/>
-                        </StackLayout>
                     </StackLayout>
-                </Frame>
 
-                <Image Source="background_login" />
+                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="10">
+                        <Label HorizontalOptions="Center" FontSize="40" FontAttributes="Bold">
+                            Приветствуем!
+                        </Label>
+                        <Label HorizontalOptions="Center" FontSize="20" Padding="0,0,0,20">
+                            Ввойдите в аккаунт
+                        </Label>
 
-                <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="Black"  
+                        <Frame HasShadow="True">
+                            <Frame.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#222222" Offset="0.1" />
+                                    <GradientStop Color="#222222" Offset="1" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+
+                            <StackLayout>
+                                <Label Text="Пользователь" />
+                                <Entry x:Name="username_Entry" Placeholder="Логин или почта" Keyboard="Email" TextColor="White">
+                                    <Entry.Effects>
+                                        <tool:RemoveBorderEffect />
+                                    </Entry.Effects>
+                                </Entry>
+
+                                <Label Text="Пороль" />
+                                <Entry IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="password_Entry">
+                                    <Entry.Effects>
+                                        <tool:RemoveBorderEffect/>
+                                    </Entry.Effects>
+                                </Entry>
+                                <StackLayout Orientation="Horizontal" >
+                                    <CheckBox x:Name="savelogin_checkBox"/>
+                                    <Label Text="Запомнить меня?" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <Image Source="background_login" />
+
+                        <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="Black"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#FFF"/>
-            </StackLayout>
+                    </StackLayout>
 
-            <!--<StackLayout Orientation="Vertical" VerticalOptions="End">
+                    <!--<StackLayout Orientation="Vertical" VerticalOptions="End">
                 <Label HorizontalOptions="Center" FontSize="20">
                     <Label.FormattedText>
                         <FormattedString>
@@ -72,7 +73,8 @@
                     </Label.FormattedText>
                 </Label>
             </StackLayout>-->
-
-        </StackLayout>
+                </StackLayout>
+            <ActivityIndicator x:Name="loading_indicator" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

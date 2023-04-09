@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ConsoleAppForStudentsApp.Models
 {
-    internal class Student: IUser
+    public class Student: IUser
     {
         public string status { get; set; }
         public string id { get; set; }
@@ -42,6 +42,10 @@ namespace ConsoleAppForStudentsApp.Models
             this.fathername = student.fathername;
 
             return message;
+        }
+        public override string ToString()
+        {
+            return lastname + " " + firstname + " " + fathername;
         }
     }
 }
