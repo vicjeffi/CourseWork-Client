@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tool="http://xamarin.com/schemas/2020/toolkit"
+             Title="Вход в профиль"
+             x:Class="CourseWork_Client.LoginPage"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Проверить Пинг" Clicked="OnServerStatusClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="Fill">
+            <StackLayout x:Name="main_content" Padding="30" Spacing="40" BackgroundColor="#2c2c2c" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <StackLayout Orientation="Vertical" VerticalOptions="Start">
+
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand" Spacing="10">
+                        <Label HorizontalOptions="Center" FontSize="40" FontAttributes="Bold">
+                            Приветствуем!
+                        </Label>
+                        <Label HorizontalOptions="Center" FontSize="20" Padding="0,0,0,20">
+                            Ввойдите в аккаунт
+                        </Label>
+
+                        <Frame HasShadow="True">
+                            <Frame.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#222222" Offset="0.1" />
+                                    <GradientStop Color="#222222" Offset="1" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+
+                            <StackLayout>
+                                <Label Text="Пользователь" />
+                                <Entry x:Name="username_Entry" Placeholder="Логин или почта" Keyboard="Email" TextColor="White">
+                                    <Entry.Effects>
+                                        <tool:RemoveBorderEffect />
+                                    </Entry.Effects>
+                                </Entry>
+
+                                <Label Text="Пороль" />
+                                <Entry IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="password_Entry">
+                                    <Entry.Effects>
+                                        <tool:RemoveBorderEffect/>
+                                    </Entry.Effects>
+                                </Entry>
+                                <StackLayout Orientation="Horizontal" >
+                                    <CheckBox x:Name="savelogin_checkBox"/>
+                                    <Label Text="Запомнить меня?" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <Image Source="background_login" />
+
+                        <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="Black"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#FFF"/>
+                    </StackLayout>
+
+                    <!--<StackLayout Orientation="Vertical" VerticalOptions="End">
+                <Label HorizontalOptions="Center" FontSize="20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Нету учетной записи?" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenUrlAction}" CommandParameter="{Binding Site.Url}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>-->
+                </StackLayout>
+            <ActivityIndicator x:Name="loading_indicator" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

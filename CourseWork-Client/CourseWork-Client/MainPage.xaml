@@ -1,80 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tool="http://xamarin.com/schemas/2020/toolkit"
-             Title="Вход в профиль" 
-             x:Class="CourseWork_Client.MainPage"
+             Title="Главная" 
+             x:Class="ConsoleAppForStudentsApp.MainPage"
              NavigationPage.HasBackButton="False">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Проверить Пинг" Clicked="OnServerStatusClicked"/>
-    </ContentPage.ToolbarItems>
+    <!--Pages can be added as references or inline-->
 
-    <ContentPage.Content>
-        <AbsoluteLayout VerticalOptions="Fill">
-            <StackLayout x:Name="main_content" Padding="30" Spacing="40" BackgroundColor="#2c2c2c" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-                    <StackLayout Orientation="Vertical" VerticalOptions="Start">
+    <TabbedPage.ToolbarItems>
+        
+    </TabbedPage.ToolbarItems>
 
-                    </StackLayout>
-
-                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="10">
-                        <Label HorizontalOptions="Center" FontSize="40" FontAttributes="Bold">
-                            Приветствуем!
-                        </Label>
-                        <Label HorizontalOptions="Center" FontSize="20" Padding="0,0,0,20">
-                            Ввойдите в аккаунт
-                        </Label>
-
-                        <Frame HasShadow="True">
-                            <Frame.Background>
-                                <LinearGradientBrush EndPoint="1,0">
-                                    <GradientStop Color="#222222" Offset="0.1" />
-                                    <GradientStop Color="#222222" Offset="1" />
-                                </LinearGradientBrush>
-                            </Frame.Background>
-
-                            <StackLayout>
-                                <Label Text="Пользователь" />
-                                <Entry x:Name="username_Entry" Placeholder="Логин или почта" Keyboard="Email" TextColor="White">
-                                    <Entry.Effects>
-                                        <tool:RemoveBorderEffect />
-                                    </Entry.Effects>
-                                </Entry>
-
-                                <Label Text="Пороль" />
-                                <Entry IsPassword="true" Placeholder="Пороль" TextColor="White" x:Name="password_Entry">
-                                    <Entry.Effects>
-                                        <tool:RemoveBorderEffect/>
-                                    </Entry.Effects>
-                                </Entry>
-                                <StackLayout Orientation="Horizontal" >
-                                    <CheckBox x:Name="savelogin_checkBox"/>
-                                    <Label Text="Запомнить меня?" VerticalTextAlignment="Center"/>
-                                </StackLayout>
-                            </StackLayout>
-                        </Frame>
-
-                        <Image Source="background_login" />
-
-                        <Button Text="Войти!" Clicked="OnLoginButtonClicked" TextColor="Black"  
-                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="#FFF"/>
-                    </StackLayout>
-
-                    <!--<StackLayout Orientation="Vertical" VerticalOptions="End">
-                <Label HorizontalOptions="Center" FontSize="20">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Нету учетной записи?" TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding OpenUrlAction}" CommandParameter="{Binding Site.Url}"/>
-                                </Span.GestureRecognizers>
-                            </Span>
-                        </FormattedString>
-                    </Label.FormattedText>
+    <!--<ContentPage Title="Лента новостей">
+        <ContentPage.Content>
+            <StackLayout Padding="10">
+                <Label>
+                    sffsf
                 </Label>
-            </StackLayout>-->
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>-->
+    <ContentPage Title="Отсутствия">
+        <ContentPage.Content>
+            <StackLayout>
+                <StackLayout Padding="0" >
+                    <Frame HasShadow="True">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Color="#222222" Offset="0.1" />
+                                <GradientStop Color="#222222" Offset="1" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Label x:Name="statusName" Text="test" FontSize="Medium" HorizontalTextAlignment="Center"/>
+                    </Frame>
                 </StackLayout>
-            <ActivityIndicator x:Name="loading_indicator" IsRunning="False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1"/>
-        </AbsoluteLayout>
-    </ContentPage.Content>
-</ContentPage>
+
+                <StackLayout Padding="10" x:Name="statusContent" IsVisible="False">
+
+                </StackLayout>
+                <StackLayout Padding="10" VerticalOptions="Center" >
+                    <CollectionView 
+                        x:Name="studentsCollection_cv"
+                        SelectionMode="Multiple"
+                        BindingContext="{Binding SelectedGroup.Student}"
+                        IsVisible="False">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding firstname}" FontSize="20"/>
+                                    <Label Text="{Binding lastname}" FontSize="20"/>
+                                    <Label Text="{Binding fathername}" FontSize="20"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <StackLayout Padding="10" VerticalOptions="Center" >
+                    <CollectionView 
+                        x:Name="attendancesCollection_cv"
+                        SelectionMode="Multiple"
+                        IsVisible="False">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" VerticalOptions="Start" HeightRequest="60">
+                                        <Label  Text="{Binding Discipline}" VerticalOptions="CenterAndExpand" FontSize="20"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"  HeightRequest="60" >
+                                        <Label HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text="{Binding time}" FontSize="20"  TextColor="#C7C7C7" />
+                                    </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="End">
+                    <Button Text="Очистить выбор" Clicked="clearSelection_button_OnClearSelection" TextColor="#FFF"  
+                     FontSize="Large" HorizontalOptions="FillAndExpand"  
+                     BackgroundColor="#334337" x:Name="clearSelection_button" IsVisible="False"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="End">
+                    <Button Text="Добавить отсутствие" Clicked="addAttendance_button_OnAddAttendance" TextColor="#FFF"  
+                     FontSize="Large" HorizontalOptions="FillAndExpand"  
+                     BackgroundColor="#482626" x:Name="addAttendance_button" IsEnabled="False" IsVisible="False"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="End">
+                    <Button Text="Пометить как прочитанное" Clicked="editAttendance_button_OnEditAttendance" TextColor="#FFF"  
+                     FontSize="Large" HorizontalOptions="FillAndExpand"  
+                     BackgroundColor="#482626" x:Name="editAttendance_button" IsEnabled="False" IsVisible="False"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Профиль">
+        <ContentPage.Content>
+            <StackLayout>
+                <Frame HasShadow="True">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Color="#222222" Offset="0.1" />
+                            <GradientStop Color="#222222" Offset="1" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <StackLayout HorizontalOptions="CenterAndExpand">
+                        <Ellipse Fill="Black"
+                        WidthRequest="140"
+                        HeightRequest="140" HorizontalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,0,0,5">
+                            <Label Text="{Binding User.lastname}" FontSize="20"/>
+                            <Label Text="{Binding User.fathername}" FontSize="20"/>
+                        </StackLayout>
+                        <Frame HasShadow="False" CornerRadius="10" Padding="3,0,3,3" BackgroundColor="{Binding StatusBackColor}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Frame HasShadow="True" BackgroundColor="{Binding StatusColor}" CornerRadius="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label x:Name="profile_status_label" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </Frame>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Выйти из профиля" Clicked="toolbar_OnLogoutButtonClicked" TextColor="#E9D7D7"  
+                     FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#482626"/>
+                
+                <StackLayout Orientation="Horizontal" Padding="20">
+                    <!--<Label Text="Ваши данные:" FontSize="20"/>-->
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

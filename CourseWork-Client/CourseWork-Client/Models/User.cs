@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleAppForStudentsApp.Models
+﻿namespace ConsoleAppForStudentsApp.Models
 {
     public interface IUser
     {

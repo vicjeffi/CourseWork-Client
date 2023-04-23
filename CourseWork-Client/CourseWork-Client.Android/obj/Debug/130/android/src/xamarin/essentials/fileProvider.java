@@ -23,6 +23,15 @@ public class fileProvider
 		}
 	}
 
+
+	public fileProvider (int p0)
+	{
+		super (p0);
+		if (getClass () == fileProvider.class) {
+			mono.android.TypeManager.Activate ("Xamarin.Essentials.FileProvider, Xamarin.Essentials", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
+		}
+	}
+
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{

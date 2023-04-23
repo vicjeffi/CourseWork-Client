@@ -1,9 +1,6 @@
-﻿using CourseWork_Client;
-using Newtonsoft.Json;
-using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
 
 namespace ConsoleAppForStudentsApp.Models
 {
@@ -36,12 +33,12 @@ namespace ConsoleAppForStudentsApp.Models
 
             Teacher teacher = JsonConvert.DeserializeObject<Teacher>(task2.Result);
 
-            this.status = teacher.status;
-            this.id = teacher.id;
-            this.firstname = teacher.firstname;
-            this.lastname = teacher.lastname;
-            this.fathername = teacher.fathername;
-            this.groups = teacher.groups;
+            status = teacher.status;
+            id = teacher.id;
+            firstname = teacher.firstname;
+            lastname = teacher.lastname;
+            fathername = teacher.fathername;
+            groups = teacher.groups;
 
             return message;
         }
@@ -65,7 +62,7 @@ namespace ConsoleAppForStudentsApp.Models
 
             Teacher teacher = JsonConvert.DeserializeObject<Teacher>(task2.Result);
 
-            this.Disciplines = teacher.Disciplines;
+            Disciplines = teacher.Disciplines;
 
             return message;
         }

@@ -1,13 +1,9 @@
-﻿using CourseWork_Client;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 using System.Net;
-using System.Text;
 
 namespace ConsoleAppForStudentsApp.Models
 {
-    public class Admin: IUser
+    public class Admin : IUser
     {
         public string status { get; set; }
         public string id { get; set; }
@@ -34,11 +30,11 @@ namespace ConsoleAppForStudentsApp.Models
 
             Admin student = JsonConvert.DeserializeObject<Admin>(task2.Result);
 
-            this.status = student.status;
-            this.id = student.id;
-            this.firstname = student.firstname;
-            this.lastname = student.lastname;
-            this.fathername = student.fathername;
+            status = student.status;
+            id = student.id;
+            firstname = student.firstname;
+            lastname = student.lastname;
+            fathername = student.fathername;
 
             return message;
         }

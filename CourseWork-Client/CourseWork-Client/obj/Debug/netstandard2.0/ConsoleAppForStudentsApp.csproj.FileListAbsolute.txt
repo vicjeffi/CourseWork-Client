@@ -13,4 +13,5 @@ C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Clie
 C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ConsoleAppForStudentsApp.pdb
 C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\ref\ConsoleAppForStudentsApp.dll
 C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\refint\ConsoleAppForStudentsApp.dll
-C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\TabbedPage1.xaml.g.cs
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
+C:\Users\Shnaps\source\repos\CourseWork-Client\CourseWork-Client\CourseWork-Client\obj\Debug\netstandard2.0\EditAttendancePage.xaml.g.cs

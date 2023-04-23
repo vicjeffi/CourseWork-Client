@@ -1,4 +1,5 @@
 ﻿using ConsoleAppForStudentsApp;
+using OneSignalSDK.Xamarin;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -13,39 +14,30 @@ namespace CourseWork_Client
         {
             InitializeComponent();
 
-            var task0 = GetIsStayLogined();
-            task0.Wait();
+            var taskLogined = Client.GetIsStayLogined();
+            taskLogined.Wait();
 
-            if (task0.Result)
+            if(!taskLogined.Result)
+                MainPage = new NavigationPage(new LoginPage());
+
+            if (taskLogined.Result)
             {
-                var task1 = SecureStorage.GetAsync("username");
-                task1.Wait();
-                string saved_username = task1.Result;
+                var taskGetUsername = SecureStorage.GetAsync("username");
+                taskGetUsername.Wait();
+                string saved_username = taskGetUsername.Result;
 
-                var task2 = SecureStorage.GetAsync("password");
-                task2.Wait();
-                string saved_password = task2.Result;
+                var taskGetPassword = SecureStorage.GetAsync("password");
+                taskGetPassword.Wait();
+                string saved_password = taskGetPassword.Result;
 
-                bool loginedOnServer;
-                var task3 = new Website().TryLogin(saved_username, saved_password, out loginedOnServer);
-                if (loginedOnServer)
+                bool isLoginedOnServer;
+                var taskTryToLoginOnServer = Website.Basic.TryLogin(saved_username, saved_password, out isLoginedOnServer);
+                if (isLoginedOnServer)
                 {
-                    MainPage = new NavigationPage(new TabbedPage1());
+                    MainPage = new NavigationPage(new MainPage());
                     return;
                 }
             }
-
-            MainPage = new NavigationPage(new MainPage());
-        }
-        public static async Task<bool> GetIsStayLogined()
-        {
-            string logined = await Xamarin.Essentials.SecureStorage.GetAsync("logined");
-            bool parsed;
-            if (Boolean.TryParse(logined, out parsed))
-            {
-                return parsed;
-            }
-            return false;
         }
 
         protected override void OnStart()
@@ -59,6 +51,19 @@ namespace CourseWork_Client
         protected override void OnResume()
         {
             // Handle when your app resumes  
+        }
+    }
+    public class Client
+    {
+        public static async Task<bool> GetIsStayLogined()
+        {
+            string logined = await Xamarin.Essentials.SecureStorage.GetAsync("logined");
+            bool parsed;
+            if (Boolean.TryParse(logined, out parsed))
+            {
+                return parsed;
+            }
+            return false;
         }
     }
 }

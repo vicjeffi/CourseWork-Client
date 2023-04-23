@@ -1,9 +1,6 @@
-﻿using CourseWork_Client;
-using Newtonsoft.Json;
-using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net;
-using System.Text;
 
 namespace ConsoleAppForStudentsApp.Models
 {
@@ -13,7 +10,7 @@ namespace ConsoleAppForStudentsApp.Models
         public string group { get; set; }
         public string course { get; set; }
         public string number { get; set; }
-        public string Name { get {return group + "-" + course + number; } }
+        public string Name { get { return group + "-" + course + number; } }
         private List<Student> _users = new List<Student>();
         public List<Student> Student { get { return _users; } set { _users = value; } }
         public string LoadStudents(out bool result)
@@ -36,7 +33,7 @@ namespace ConsoleAppForStudentsApp.Models
 
             Group group = JsonConvert.DeserializeObject<Group>(task2.Result);
 
-            this.Student = group.Student;
+            Student = group.Student;
 
             return message;
         }
